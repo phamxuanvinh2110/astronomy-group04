@@ -15,7 +15,7 @@ Documentations : https://github.com/phamxuanvinh2110/astronomy-group04/tree/main
 
 =======================================
 
-Published website : https://github.com/phamxuanvinh2110/astronomy-group04
+Published website : https://phamxuanvinh2110.github.io/astronomy-group04/
 
 =======================================
 
