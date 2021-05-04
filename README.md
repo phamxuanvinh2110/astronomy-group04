@@ -11,11 +11,11 @@ Astronomy
 
 =======================================
 
-Documentations : https://github.com/azbyc2610/Astronomy/tree/main/Documentations
+Documentations : https://github.com/phamxuanvinh2110/astronomy-group04/tree/main/Documentations
 
 =======================================
 
-Published website : https://azbyc2610.github.io/Astronomy/
+Published website : https://github.com/phamxuanvinh2110/astronomy-group04
 
 =======================================
 
