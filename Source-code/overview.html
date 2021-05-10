@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Overview</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jquery-nav -->
+    <script>
+      //Active menu
+      $(document).ready(function () {
+        $("ul li a").click(function () {
+          $("li a").removeClass("active-menu");
+          $(this).addClass("active-menu");
+        });
+      });
+
+      //hide show menu
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("menu").style.top = "0";
+        } else {
+          document.getElementById("menu").style.top = "-100px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="menu">
+        <input type="checkbox" id="show-menu" />
+        <label for="show-menu" class="menu-icon"
+          ><i class="fas fa-bars"></i
+        ></label>
+        <div class="content">
+          <div class="logo"><a href="index.html">Astronomy</a></div>
+          <ul class="links">
+            <li><a href="index.html">Homepage</a></li>
+            <li><a class="active-menu" href="overview.html">Overview</a></li>
+            <li>
+              <a href="#" class="desktop-link"
+                >Planets <i class="fa fa-caret-down"></i
+              ></a>
+              <input type="checkbox" id="show-features" />
+              <label for="show-features"
+                >Planets <i class="fa fa-caret-down"></i
+              ></label>
+              <ul>
+                <li><a href="planets/detail-mars.html">Mars</a></li>
+                <li><a href="planets/detail-venus.html">Venus</a></li>
+                <li><a href="#">Drop Menu 3</a></li>
+                <li><a href="#">Drop Menu 4</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="desktop-link"
+                >Stars <i class="fa fa-caret-down"></i
+              ></a>
+              <input type="checkbox" id="show-services" />
+              <label for="show-services"
+                >Stars <i class="fa fa-caret-down"></i
+              ></label>
+              <ul>
+                <li><a href="stars/detail-comet.html">Comet</a></li>
+                <li><a href="#">Drop Menu 2</a></li>
+                <li><a href="#">Drop Menu 3</a></li>
+
+                <li>
+                  <a href="#" class="desktop-link"
+                    >More Items <i class="fa fa-caret-down"></i
+                  ></a>
+                  <input type="checkbox" id="show-items" />
+                  <label for="show-items"
+                    >More Items <i class="fa fa-caret-down"></i
+                  ></label>
+                  <ul>
+                    <li><a href="#">Sub Menu 1</a></li>
+                    <li><a href="#">Sub Menu 2</a></li>
+                    <li><a href="#">Sub Menu 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="maps.html">Maps</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="detail-planet">
+      <img
+        style="width: 100%"
+        src="https://solarsystem.nasa.gov/internal_resources/517/"
+        alt=""
+        class="img-fluid"
+      />
+
+      <script>
+        const close = document.querySelector(".close");
+        const scrollcontent = document.querySelector(".scroll-content");
+
+        close.addEventListener("click", function () {
+          scrollcontent.style.display = "none";
+        });
+      </script>
+    </div>
+    <div class="more-bar more-bar-overview">
+      <a href="#tab"> MORE <i class="fas fa-angle-down"></i> </a>
+    </div>
+    <!-- tab -->
+    <div id="tab" class="wrapper-tab wrapper-tab-comet">
+      <div class="tabs container">
+        <ul>
+          <li class="col-4 active-tab wrapper-tab-comets">
+            <span class="text">OVERVIEW</span>
+          </li>
+          <li class="col-4 wrapper-tab-comets">
+            <span class="text">IN DEPTH</span>
+          </li>
+          <li class="col-4 wrapper-tab-comets">
+            <span class="text">GALLERIES</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-tab">
+        <!-- Start Overview -->
+        <div class="tab_wrap" style="display: block">
+          <nav class="onthispage" role="navigation">
+            <div id="menuToggle">
+              <input id="nav-input" type="checkbox" />
+              <label class="hamburger" for="nav-input"><span></span></label>
+
+              <ul id="menu-tab">
+                <a href="#ten-thing"
+                  ><li>10 Things to Know About Our Solar System</li></a
+                >
+                <a href="#FAQ"
+                  ><li>
+                    FAQ: What Spacecraft are Headed into Interstellar Space?
+                  </li></a
+                >
+              </ul>
+            </div>
+          </nav>
+          <div class="tab_content">
+            <div class="content-overview">
+              <fieldset class="border">
+                <legend class="w-auto">Our Solar System</legend>
+                <h3 class="snippet_title">
+                  Why Is It Called The "Solar" System?
+                </h3>
+                <p class="description">
+                  There are many planetary systems like ours in the universe,
+                  with planets orbiting a host star. Our planetary system is
+                  named the "solar" system because our Sun is named Sol, after
+                  the Latin word for Sun, "solis," and anything related to the
+                  Sun we call "solar."
+                </p>
+              </fieldset>
+              <p>
+                Our planetary system is located in an outer spiral arm of the
+                Milky Way galaxy.
+              </p>
+              <p>
+                Our solar system consists of our star, the Sun, and everything
+                bound to it by gravity — the planets Mercury, Venus, Earth,
+                Mars, Jupiter, Saturn, Uranus and Neptune, dwarf planets such as
+                Pluto, dozens of moons and millions of asteroids, comets and
+                meteoroids. Beyond our own solar system, we have discovered
+                thousands of planetary systems orbiting other stars in the Milky
+                Way.
+              </p>
+              <p>
+                Go farther.
+                <b
+                  ><a href="/solar-system/our-solar-system/in-depth/"
+                    >Explore Our Solar System in Depth ›</a
+                  ></b
+                >
+              </p>
+            </div>
+
+            <div id="ten-thing" class="ten-thing-overview">
+              <div class="container">
+                <h2>10 Need-to-Know Things About Mars</h2>
+                <div class="row">
+                  <div class="col-xl-4 i1">
+                    <div class="number-count">
+                      <p>1</p>
+                    </div>
+                    <h6>ONE OF BILLIONS</h6>
+                    <p>
+                      Our solar system is made up of a star, eight planets and
+                      countless smaller bodies such as dwarf planets, asteroids
+                      and comets.
+                    </p>
+                  </div>
+                  <div class="col-xl-4 i2">
+                    <div class="number-count">
+                      <p>2</p>
+                    </div>
+                    <h6>MEET ME IN THE ORION ARM</h6>
+                    <p>
+                      Our solar system orbits the center of the Milky Way Galaxy
+                      at about 515,000 mph (828,000 kph). We’re in one of the
+                      galaxy’s four spiral arms.
+                    </p>
+                  </div>
+                  <div class="col-xl-4 i3">
+                    <div class="number-count">
+                      <p>3</p>
+                    </div>
+                    <h6>A LONG WAY ROUND</h6>
+                    <p>
+                      It takes our solar system about 230 million years to
+                      complete one orbit around the galactic center.
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-4 i4 img-fluid">
+                    <img
+                      src="https://solarsystem.nasa.gov/system/basic_html_elements/11717_ten_things_ss_1.jpg"
+                      class="img-fluid"
+                      alt="Responsive image"
+                    />
+                  </div>
+                  <div class="col-xl-4 i5">
+                    <div class="number-count">
+                      <p>4</p>
+                    </div>
+                    <h6>SPIRALING THROUGH SPACE</h6>
+                    <p>
+                      There are three general kinds of galaxies: elliptical,
+                      spiral and irregular. The Milky Way is a spiral galaxy.
+                    </p>
+                  </div>
+                  <div class="col-xl-4 i6">
+                    <div class="number-count">
+                      <p>5</p>
+                    </div>
+                    <h6>GOOD ATMOSPHERE(S)</h6>
+                    <p>
+                      Our solar system is a region of space. It has no
+                      atmosphere. But it contains many worlds—including
+                      Earth—with many kinds of atmospheres.
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-4 i7">
+                    <div class="number-count">
+                      <p>6</p>
+                    </div>
+                    <h6>MANY MOONS</h6>
+                    <p>
+                      The planets of our solar system—and even some
+                      asteroids—hold more than 150 moons in their orbits.
+                    </p>
+                  </div>
+                  <div class="col-xl-4 i8">
+                    <div class="number-count">
+                      <p>7</p>
+                    </div>
+                    <h6>RING WORLDS</h6>
+                    <p>
+                      The four giant planets—and at least one asteroid—have
+                      rings. None are as spectacular as Saturn’s gorgeous rings.
+                    </p>
+                  </div>
+                  <div class="col-xl-4 i9">
+                    <div class="number-count">
+                      <p>8</p>
+                    </div>
+                    <h6>LEAVING THE CRADLE</h6>
+                    <p>
+                      More than 300 robotic spacecraft have explored
+                      destinations beyond Earth orbit, including 24 astronauts
+                      who orbited the moon.
+                    </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-4 i10">
+                    <div class="number-count">
+                      <p>9</p>
+                    </div>
+                    <h6>LIFE AS WE KNOW IT</h6>
+                    <p>
+                      Our solar system is the only one known to support life. So
+                      far, we only know of life on Earth, but we’re looking for
+                      more everywhere we can.
+                    </p>
+                  </div>
+                  <div class="col-xl-4 i11">
+                    <div class="number-count">
+                      <p>10</p>
+                    </div>
+                    <h6>FAR-RANGING ROBOTS</h6>
+                    <p>
+                      NASA’s Voyager 1 is the only spacecraft so far to leave
+                      our solar system. Four other spacecraft will eventually
+                      hit interstellar space.
+                    </p>
+                  </div>
+                  <div class="col-xl-4 i12 img-fluid">
+                    <img
+                      src="https://solarsystem.nasa.gov/system/basic_html_elements/11718_ten_things_ss_2.jpg"
+                      class="img-fluid"
+                      alt="Responsive image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-overview">
+            <h2 id="FAQ">
+              <b>FAQ</b>: What Spacecraft are Headed into Interstellar Space?
+            </h2>
+            <p>
+              Five spacecraft have achieved enough velocity to eventually travel
+              beyond the boundaries of our solar system. Two of them reached the
+              unexplored space between the stars after several decades in space.
+            </p>
+            <ul>
+              <li>
+                <a href="/missions/voyager-1/in-depth/">Voyager 1</a> went
+                interstellar in 2012 and
+                <a href="/missions/voyager-2/in-depth/">Voyager 2</a> joined it
+                in 2018. Both spacecraft are still in communication with Earth.
+                Both spacecraft launched in 1977.
+              </li>
+              <li>
+                NASA's
+                <a href="/missions/new-horizons/in-depth/">New Horizons</a>
+                spacecraft—currently exploring the an icy region beyond Neptune
+                called the Kuiper Belt—eventually will leave our solar system.
+              </li>
+              <li>
+                <a href="/missions/pioneer-10/in-depth/">Pioneer 10</a> and
+                <a href="/missions/pioneer-11/in-depth/">Pioneer 11</a> also
+                will ultimately travel silently among the stars. The spacecraft
+                used up their power supplies decades ago.
+              </li>
+            </ul>
+            <div class="page_updated">
+              <hr />
+              Page Updated: February 19, 2021
+            </div>
+          </div>
+
+          <!-- End overview -->
+        </div>
+
+        <!-- Start indepth -->
+        <div class="tab_wrap" style="display: none">
+          <div class="tab_content">
+            <nav class="onthispage" role="navigation">
+              <div id="menuToggle">
+                <input id="nav-input" type="checkbox" />
+                <label class="hamburger" for="nav-input"><span></span></label>
+
+                <ul id="menu-tab">
+                  <a href="#Introduction"><li>Introduction</li></a>
+                  <a href="#Size-and-Distance"><li>Size and Distance</li></a>
+                  <a href="#Formation"><li>Formation</li></a>
+                  <a href="#Structure"><li>Structure</li></a>
+                  <a href="#Potential-for-Life"><li>Potential for Life</li></a>
+                  <a href="#Moons"><li>Moons</li></a>
+                </ul>
+              </div>
+            </nav>
+            <div class="content-indepth">
+              <p id="Introduction">
+                The planetary system we call home is located in an outer spiral
+                arm of the Milky Way galaxy.
+              </p>
+              <p>
+                Our solar system consists of our star, the Sun, and everything
+                bound to it by gravity — the planets Mercury, Venus, Earth,
+                Mars, Jupiter, Saturn, Uranus and Neptune, dwarf planets such as
+                Pluto, dozens of moons and millions of asteroids, comets and
+                meteoroids.
+              </p>
+              <p>
+                Beyond our own solar system, there are more planets than stars
+                in night sky. So far, we have discovered thousands of planetary
+                systems orbiting other stars in the Milky Way, with more planets
+                being found all the time. Most of the hundreds of billions of
+                stars in our galaxy are thought to have planets of their own,
+                and the Milky Way is but one of perhaps 100 billion galaxies in
+                the universe.
+              </p>
+              <p>
+                While our planet is in some ways a mere speck in the vast
+                cosmos, we have a lot of company out there. It seems that we
+                live in a universe packed with planets — a web of countless
+                stars accompanied by families of objects, perhaps some with life
+                of their own.
+              </p>
+              <h3 id="Size-and-Distance">
+                <span><span>Size and Distance</span></span>
+              </h3>
+              <p>
+                <span
+                  ><span
+                    >Our solar system extends much farther than the eight
+                    planets that orbit the Sun. The solar system also includes
+                    the Kuiper Belt that lies past Neptune's orbit. This is a
+                    sparsely occupied ring of icy bodies, almost all smaller
+                    than the most popular Kuiper Belt Object, dwarf planet
+                    Pluto.
+                  </span></span
+                >
+              </p>
+              <p>
+                <span
+                  ><span
+                    >And beyond the fringes of the Kuiper belt is the Oort
+                    Cloud. This giant spherical shell surrounds our solar
+                    system. It has never been directly observed, but its
+                    existence is predicted based on mathematical models and
+                    observations of comets that likely originate there.
+                  </span></span
+                >
+              </p>
+              <p>
+                <span
+                  ><span
+                    >The Oort Cloud is made of icy pieces of space debris the
+                    sizes of mountains and sometimes larger, orbiting our Sun as
+                    far as 1.6 light years away. This shell of material is
+                    thick, extending from 5,000 astronomical units to 100,000
+                    astronomical units. One astronomical unit (or AU) is the
+                    distance from the Sun to Earth, or about 93 million miles
+                    (150 million kilometers). The Oort Cloud is the boundary of
+                    the Sun's gravitational influence, where orbiting objects
+                    can turn around and return closer to our Sun.</span
+                  ></span
+                >
+              </p>
+              <p>
+                <span
+                  ><span
+                    >The Sun's heliosphere doesn't extend quite as far. The
+                    heliosphere is the bubble created by the solar wind—a stream
+                    of electrically charged gas blowing outward from the Sun in
+                    all directions. The boundary where the solar wind is
+                    abruptly slowed by pressure from interstellar gases is
+                    called the termination shock. This edge occurs between
+                    80-100 astronomical units.</span
+                  ></span
+                >
+              </p>
+              <p>
+                <span
+                  ><span
+                    >Two NASA spacecraft, launched in 1977, have crossed the
+                    termination shock: Voyager 1 in 2004 and Voyager 2 in 2007.
+                    But it will be many thousands of years before the two
+                    Voyagers exit the Oort Cloud.</span
+                  ></span
+                ><span><span>​</span></span>
+              </p>
+              <h3 id="Formation">
+                <span><span>Formation</span></span>
+              </h3>
+              <p>
+                <span
+                  ><span
+                    >Our solar system formed about 4.5 billion years ago from a
+                    dense cloud of interstellar gas and dust. The cloud
+                    collapsed, possibly due to the shockwave of a nearby
+                    exploding star, called a supernova. When this dust cloud
+                    collapsed, it formed a solar nebula—a spinning, swirling
+                    disk of material.</span
+                  ></span
+                >
+              </p>
+              <p>
+                <span
+                  ><span
+                    >At the center, gravity pulled more and more material in.
+                    Eventually the pressure in the core was so great that
+                    hydrogen atoms began to combine and form helium, releasing a
+                    tremendous amount of energy. With that, our Sun was born,
+                    and it eventually amassed more than 99 percent of the
+                    available matter.</span
+                  ></span
+                >
+              </p>
+              <p>
+                <span
+                  ><span
+                    >Matter farther out in the disk was also clumping together.
+                    These clumps smashed into one another, forming larger and
+                    larger objects. Some of them grew big enough for their
+                    gravity to shape them into spheres, becoming planets, dwarf
+                    planets and large moons. In other cases, planets did not
+                    form: the asteroid belt is made of bits and pieces of the
+                    early solar system that could never quite come together into
+                    a planet. Other smaller leftover pieces became asteroids,
+                    comets, meteoroids, and small, irregular moons.
+                  </span></span
+                >
+              </p>
+              <h3 id="Structure">
+                <span><span>Structure</span></span>
+              </h3>
+              <p>
+                <span
+                  ><span
+                    >The order and arrangement of the planets and other bodies
+                    in our solar system is due to the way the solar system
+                    formed. Nearest the Sun, only rocky material could withstand
+                    the heat when the solar system was young. For this reason,
+                    the first four planets—Mercury, Venus, Earth and Mars—are
+                    terrestrial planets. They're small with solid, rocky
+                    surfaces.</span
+                  ></span
+                >
+              </p>
+              <p>
+                <span
+                  ><span
+                    >Meanwhile, materials we are used to seeing as ice, liquid
+                    or gas settled in the outer regions of the young solar
+                    system. Gravity pulled these materials together, and that is
+                    where we find gas giants Jupiter and Saturn and ice giants
+                    Uranus and Neptune.</span
+                  ></span
+                >
+              </p>
+              <h3 id="Potential-for-Life">
+                <span><span>Potential for Life</span></span>
+              </h3>
+              <p>
+                <span
+                  ><span
+                    >Our solar system is the only place we know of that harbors
+                    life, but the farther we explore the more we find potential
+                    for life in other places. Both Jupiter’s moon Europa and
+                    Saturn’s moon Enceladus have global saltwater oceans under
+                    thick, icy shells.
+                  </span></span
+                >
+              </p>
+              <h3 id="Moons">
+                <span><span>Moons </span></span>
+              </h3>
+              <span
+                ><span
+                  >There are more than 150 known moons in our solar system and
+                  several more awaiting confirmation of discovery. Of the eight
+                  planets, Mercury and Venus are the only ones with no moons.
+                  The giant planets grab the most moons. Jupiter and Saturn have
+                  long lead our solar system’s moon counts. In some ways, the
+                  swarms of moons around these worlds resemble mini versions of
+                  our solar system. Pluto, smaller than our own moon, has five
+                  moons in its orbit, including the Charon, a moon so large it
+                  makes Pluto wobble. Even tiny asteroids can have moons. In
+                  2017, scientists found </span
+                ><a href="https://cneos.jpl.nasa.gov/news/news199.html"
+                  ><span>asteroid 3122 Florence had two tiny moons</span></a
+                ><span>.</span></span
+              >
+              <div style="padding-top: 20px">
+                <img
+                  style="width: 100%"
+                  src="https://solarsystem.nasa.gov/internal_resources/442"
+                  alt=""
+                  class="img-fluid"
+                />
+                <p style="opacity: 0.8; font-size: 12px; margin: 0">
+                  These six narrow-angle color images were made from the first
+                  ever 'portrait' of the solar system taken by Voyager 1, which
+                  was more than 4 billion miles from Earth and about 32 degrees
+                  above the ecliptic. Image Credit: NASA Planetary Photojournal
+                </p>
+              </div>
+              <div class="page_updated">
+                <hr />
+                Page Updated: March 17, 2021
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End indepth -->
+
+        <!-- Start gallery -->
+        <div class="tab_wrap" style="display: none">
+          <div class="tab_content">
+            <div class="content-gallery">
+              <!-- Gallery -->
+              <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">
+                Gallery
+              </h1>
+
+              <hr class="mt-2 mb-5" />
+
+              <div class="row text-center text-lg-left">
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/aob0ukAYfuI/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/EUfxH-pze7s/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/M185_qYH8vg/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/sesveuG_rNo/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/AvhMzHwiE_0/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/2gYsZUmockw/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/EMSDtjVHdQ8/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/8mUEy0ABdNE/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/G9Rfc1qccH4/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/aJeH0KcFkuc/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- Gallery -->
+            </div>
+          </div>
+        </div>
+        <!-- End gallery -->
+      </div>
+    </div>
+    <script>
+      var tabs = document.querySelectorAll(".tabs ul li");
+      var tab_wraps = document.querySelectorAll(".tab_wrap");
+
+      tabs.forEach(function (tab, tab_index) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (tab) {
+            tab.classList.remove("active-tab");
+          });
+          tab.classList.add("active-tab");
+
+          tab_wraps.forEach(function (content, content_index) {
+            if (content_index == tab_index) {
+              content.style.display = "block";
+            } else {
+              content.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- related-news -->
+    <div class="related-news related-news-overview">
+      <h1>Our Solar System News</h1>
+      <div class="related-carousel">
+        <div
+          id="carousel-related-news"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner container">
+            <div class="carousel-item active">
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1838_wispr_venus_image_640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        This was the first direct measurement of the Venusian
+                        atmosphere in nearly 30 years — and it looks quite
+                        different from Venus past.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    NASA's Parker Solar Probe Discovers Natural Radio Emission
+                    in Venus' Atmosphere
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1836_First_selfie_animation-640x480.gif"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        Ingenuity will explore how aerial scouting and other
+                        functions could benefit future exploration of Mars and
+                        other worlds.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    NASA's Ingenuity Mars Helicopter to Begin New Demonstration
+                    Phase
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1837_atmospheric_rivers.640x480.gif"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        Windy regions high in the atmosphere can transport
+                        pollutants like dust or soot thousands of miles around
+                        the world and disrupt everyday life.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    In a First, Scientists Map Particle-Laden Rivers in the Sky
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1832_img_0747_scientific-balloon-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        A suite of scientific balloons is about to lift off
+                        carrying instruments that will help scientists
+                        understand the connection between the Sun and Earth.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    Lofted by NASA Balloons, New Experiments Will Study
+                    Sun-Earth System
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1831_OSIRIS-REx-MOM-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        Nayi Castro serves as OSIRIS-REx mission operations
+                        manager or "MOM” for short. She shares her thoughts on
+                        OSIRIS-REx leaving Bennu.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    OSIRIS-REx 'MOM' Says Goodbye to an Asteroid
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1827_PIA24624_Ingenuity_Flight_Three-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        The third flight was conducted at speeds and distances
+                        beyond what had ever been previously demonstrated, even
+                        in testing on Earth.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    NASA's Ingenuity Mars Helicopter Flies Faster, Farther on
+                    Third Flight
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1823_manicouagan-impact-crater-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        Members of NASA’s Planetary Defense Coordination Office
+                        will participate in a “tabletop exercise” to simulate an
+                        asteroid impact scenario.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    NASA to Participate in Tabletop Exercise Simulating Asteroid
+                    Impact
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1822_moxie_being_installed_in_perseverance-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        A toaster-size, experimental instrument aboard
+                        Perseverance called the MOXIE accomplished the task.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    NASA's Perseverance Mars Rover Extracts First Oxygen from
+                    Red Planet
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1818_49641911586_4d26910aba_supermoon_March_2020-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        The next full Moon will be the Pink Supermoon, on Monday
+                        night April 26, 2021. It will appear full from Sunday
+                        night through Wednesday morning.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    The Next Full Moon Is a "Supermoon" Pink Moon
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carousel-related-news"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carousel-related-news"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <h2 class="destinations-title">More Destinations</h2>
+      <div class="destinations-carousel">
+        <div id="carousel-2" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner container">
+            <div class="carousel-item active">
+              <div class="col-4">
+                <a href="#Jupiter">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/16_jupiter_new.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Jupiter</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Earth">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/17_earth.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Earth</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Mercury">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/18_mercury_new.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Mercury</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#Venus">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/27_venus_jg.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Venus</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Saturn">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/28_saturn.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Saturn</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Uranus">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/29_uranus.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Uranus</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#Neptune">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/30_neptune.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Neptune</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Earth's Moon">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/31_earth_moon.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Earth's Moon</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel-2" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-2" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="nb-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="about">
+                <h1 class="stay-connected">Stay Connected</h1>
+
+                <div class="social-media">
+                  <ul class="list-inline">
+                    <li>
+                      <a href="#facebook" title=""
+                        ><i class="fab fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#twitter" title=""
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#google" title=""
+                        ><i class="fab fa-google-plus-g"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#linkedin" title=""
+                        ><i class="fab fa-linkedin-in"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">SOLAR SYSTEM</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Our Solar
+                      System</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Sun</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Kuiper Belt</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Oort Cloud</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Beyond Our Solar
+                      System</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Planets</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mercury</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Venus</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Earth</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mars</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Jupiter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Saturn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Uranus</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Neptune</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title">DWARF PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Pluto</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Ceres</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Makemake</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Haumea</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Eris</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title">HYPOTHETICAL</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Planet X</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">MOONS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Moons</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">BY DESTINATION</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Earth (1)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mars (2)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Jupiter (79)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Saturn (82)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Uranus (27)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Neptune (14)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Pluto (5)</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">ASTEROIDS, COMETS & METEORS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Asteroids,
+                      Comets & Meteors</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">BY TYPE</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Meteors &
+                      Meteorites</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Asteroids</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Comets</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">MORE</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> News</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> What's Up:
+                      Skywatching Tips from NASA</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Resources</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Raw Images</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> People</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Missions</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Science Goals</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Technology
+                      Reports</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Kids</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Interactives</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Basics of Space
+                      Flight</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Solar System
+                      Ambassadors</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Resource
+                      Packages</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>Copyright © 2021. Astronomy Company.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>
