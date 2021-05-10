@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Detail Commet</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jquery-nav -->
+    <script>
+      //Active menu
+      $(document).ready(function () {
+        $("ul li a").click(function () {
+          $("li a").removeClass("active-menu");
+          $(this).addClass("active-menu");
+        });
+      });
+
+      //hide show menu
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("menu").style.top = "0";
+        } else {
+          document.getElementById("menu").style.top = "-100px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="menu">
+        <input type="checkbox" id="show-menu" />
+        <label for="show-menu" class="menu-icon"
+          ><i class="fas fa-bars"></i
+        ></label>
+        <div class="content">
+          <div class="logo"><a href="../index.html">Astronomy</a></div>
+          <ul class="links">
+            <li><a href="../index.html">Homepage</a></li>
+            <li><a href="../overview.html">Overview</a></li>
+            <li>
+              <a href="#" class="desktop-link"
+                >Planets <i class="fa fa-caret-down"></i
+              ></a>
+              <input type="checkbox" id="show-features" />
+              <label for="show-features"
+                >Planets <i class="fa fa-caret-down"></i
+              ></label>
+              <ul>
+                <li><a href="../planets/detail-mars.html">Mars</a></li>
+                <li><a href="../planets/detail-venus.html">Venus</a></li>
+                
+              </ul>
+            </li>
+            <li>
+              <a class="active-menu" href="#" class="desktop-link"
+                >Stars <i class="fa fa-caret-down"></i
+              ></a>
+              <input type="checkbox" id="show-services" />
+              <label for="show-services"
+                >Stars <i class="fa fa-caret-down"></i
+              ></label>
+              <ul>
+                <li><a href="../stars/detail-comet.html">Comet</a></li>
+                
+
+                <li>
+                  <a href="#" class="desktop-link"
+                    >More Items <i class="fa fa-caret-down"></i
+                  ></a>
+                  <input type="checkbox" id="show-items" />
+                  <label for="show-items"
+                    >More Items <i class="fa fa-caret-down"></i
+                  ></label>
+                  <ul>
+                    <li><a href="#">Sub Menu 1</a></li>
+                    <li><a href="#">Sub Menu 2</a></li>
+                    <li><a href="#">Sub Menu 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="../blog.html">Blogs</a></li>
+            <li><a href="../maps.html">Maps</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="detail-stars">
+      <img
+        src="https://solarsystem.nasa.gov/internal_resources/150/"
+        alt=""
+        class="imgfluid"
+      />
+      <h1 class="stars_title">Comets</h1>
+    </div>
+
+    <!-- tab -->
+    <div id="tab" class="wrapper-tab wrapper-tab-comet">
+      <div class="tabs container">
+        <ul>
+          <li class="col-4 active-tab wrapper-tab-comets">
+            <span class="text">OVERVIEW</span>
+          </li>
+          <li class="col-4 wrapper-tab-comets">
+            <span class="text">IN DEPTH</span>
+          </li>
+          <li class="col-4 wrapper-tab-comets">
+            <span class="text">GALLERIES</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-tab">
+        <!-- Start Overview -->
+        <div class="tab_wrap" style="display: block">
+          <div class="tab_content">
+            <nav class="onthispage" role="navigation">
+              <div id="menuToggle">
+                <input id="nav-input" type="checkbox" />
+                <label class="hamburger" for="nav-input"><span></span></label>
+
+                <ul id="menu-tab">
+                  <a href="#Key-Science-Targets"
+                    ><li>Key Science Targets</li></a
+                  >
+                  <a href="#Kid-Friendly-Comets"
+                    ><li>Kid-Friendly Comets</li></a
+                  >
+                  <a href="#Additional-Resources"
+                    ><li>Additional Resources</li></a
+                  >
+                </ul>
+              </div>
+            </nav>
+            <div class="content-overview">
+              <fieldset class="border">
+                <legend class="w-auto">Key Facts</legend>
+                <h3 class="snippet_title">Comets</h3>
+                <p class="description">
+                  Comets are frozen leftovers from the formation of the solar
+                  system composed of dust, rock and ices. They range from a few
+                  miles to tens of miles wide, but as they orbit closer to the
+                  sun, they heat up and spew gases and dust into a glowing head
+                  that can be larger than a planet. This material forms a tail
+                  that stretches millions of miles.
+                </p>
+              </fieldset>
+              <p>
+                Comets are cosmic snowballs of frozen gases, rock and dust that
+                orbit the Sun. When frozen, they are the size of a small town.
+                When a comet's orbit brings it close to the Sun, it heats up and
+                spews dust and gases into a giant glowing head larger than most
+                planets. The dust and gases form a tail that stretches away from
+                the Sun for millions of miles. There are likely billions of
+                comets orbiting our Sun in the Kuiper Belt and even more distant
+                Oort Cloud.
+              </p>
+              <p>
+                The current number of known comets is:
+                <b>3,721</b>
+              </p>
+              <p>
+                <b
+                  >Go farther.
+                  <a href="/small-bodies/comets/in-depth/"
+                    >Explore Comets in Depth ›</a
+                  ></b
+                >
+              </p>
+            </div>
+            <!-- img -->
+            <div class="container">
+              <h2 id="Key-Science-Targets" class="module_title">
+                Key Science Targets
+              </h2>
+              <p style="min-height: 100px; border: 1px solid black">img</p>
+            </div>
+            <div class="row container" style="margin: auto">
+              <img
+                style="max-height: 500px"
+                src="https://solarsystem.nasa.gov/system/basic_html_elements/11899_comet_c.png"
+                alt=""
+                class="img-fluid col-5"
+              />
+
+              <div class="col-6">
+                <h2 id="Kid-Friendly-Comets" class="title">
+                  Kid-Friendly Comets
+                </h2>
+                <div class="description">
+                  <p>
+                    Comets orbit the Sun just like planets and asteroids do,
+                    except a comet usually has a very elongated orbit.
+                  </p>
+
+                  <p>
+                    As the comet gets closer to the Sun, some of the ice starts
+                    to melt and boil off, along with particles of dust. These
+                    particles and gases make a cloud around the nucleus, called
+                    a coma.
+                  </p>
+
+                  <p>
+                    The coma is lit by the Sun. The sunlight also pushes this
+                    material into the beautiful brightly lit tail of the comet.
+                  </p>
+
+                  <p>
+                    <span
+                      >Visit NASA Space Place for more kid-friendly facts.</span
+                    ><span>.</span>
+                  </p>
+                </div>
+                <a
+                  class="detail_link link"
+                  href="https://spaceplace.nasa.gov/menu/comets/"
+                  target="_self"
+                >
+                  NASA Space Place: All About Comets ›
+                </a>
+              </div>
+            </div>
+            <div class="content-overview">
+              <h2 id="Additional-Resources">
+                <span>Additional Resources</span>
+              </h2>
+              <ul>
+                <li>
+                  <a
+                    href="https://photojournal.jpl.nasa.gov/target/Other"
+                    target="_blank"
+                    ><span
+                      >NASA's Planetary Photojournal: Asteroids &amp;
+                      Comets</span
+                    ></a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://nssdc.gsfc.nasa.gov/planetary/planets/cometpage.html"
+                    target="_blank"
+                    >National Space Science Data Center: Comets</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- End overview -->
+        </div>
+
+        <!-- Start indepth -->
+        <div class="tab_wrap" style="display: none">
+          <div class="tab_content">
+            <nav class="onthispage" role="navigation">
+              <div id="menuToggle">
+                <input id="nav-input" type="checkbox" />
+                <label class="hamburger" for="nav-input"><span></span></label>
+
+                <ul id="menu-tab">
+                  <a href="#Overview"><li>Overview</li></a>
+                  <a href="#Where-Do-Comets-Come"
+                    ><li>Where Do Comets Come From?</li></a
+                  >
+                  <a href="#Exploration-of-Comets"
+                    ><li>Exploration of Comets</li></a
+                  >
+                  <a href="#How-Comets-Get"
+                    ><li>How Comets Get Their Names</li></a
+                  >
+                </ul>
+              </div>
+            </nav>
+            <div class="content-indepth">
+              <p id="Overview">
+                In the distant past, people were both awed and alarmed by
+                comets, perceiving them as long-haired stars that appeared in
+                the sky unannounced and unpredictably. Chinese astronomers kept
+                extensive records for centuries, including illustrations of
+                characteristic types of comet tails, times of cometary
+                appearances and disappearances, and celestial positions. These
+                historic comet annals have proven to be a valuable resource for
+                later astronomers.
+              </p>
+              <p>
+                We now know that comets are leftovers from the dawn of our solar
+                system around 4.6 billion years ago, and consist mostly of ice
+                coated with dark organic material. They have been referred to as
+                "dirty snowballs." They may yield important clues about the
+                formation of our solar system. Comets may have brought water and
+                organic compounds, the building blocks of life, to the early
+                Earth and other parts of the solar system.
+              </p>
+              <h3 id="Where-Do-Comets-Come">Where Do Comets Come From?</h3>
+              <p>
+                As theorized by astronomer Gerard Kuiper in 1951, a disc-like
+                belt of icy bodies exists beyond Neptune, where a population of
+                dark comets orbits the Sun in the realm of Pluto. These icy
+                objects, occasionally pushed by gravity into orbits bringing
+                them closer to the Sun, become the so-called short-period
+                comets. Taking less than 200 years to orbit the Sun, in many
+                cases their appearance is predictable because they have passed
+                by before. Less predictable are long-period comets, many of
+                which arrive from a region called the Oort Cloud about 100,000
+                astronomical units (that is, about 100,000 times the distance
+                between Earth and the Sun) from the Sun. These Oort Cloud comets
+                can take as long as 30 million years to complete one trip around
+                the Sun.
+              </p>
+              <p>
+                Each comet has a tiny frozen part, called a nucleus, often no
+                larger than a few kilometers across. The nucleus contains icy
+                chunks, frozen gases with bits of embedded dust. A comet warms
+                up as it nears the Sun and develops an atmosphere, or coma. The
+                Sun's heat causes the comet's ices to change to gases so the
+                coma gets larger. The coma may extend hundreds of thousands of
+                kilometers. The pressure of sunlight and high-speed solar
+                particles (solar wind) can blow the coma dust and gas away from
+                the Sun, sometimes forming a long, bright tail. Comets actually
+                have two tails―a dust tail and an ion (gas) tail.
+              </p>
+              <p>
+                Most comets travel a safe distance from the Sun―comet Halley
+                comes no closer than 89 million kilometers (55 million miles).
+                However, some comets, called sungrazers, crash straight into the
+                Sun or get so close that they break up and evaporate.
+              </p>
+              <h3 id="Exploration-of-Comets">Exploration of Comets</h3>
+              <p>
+                Scientists have long wanted to study comets in some detail,
+                tantalized by the few 1986 images of comet Halley's nucleus.
+                NASA's Deep Space 1 spacecraft flew by comet Borrelly in 2001
+                and photographed its nucleus, which is about 8 kilometers (5
+                miles) long.
+              </p>
+              <p>
+                NASA's Stardust mission successfully flew within 236 kilometers
+                (147 miles) of the nucleus of Comet Wild 2 in January 2004,
+                collecting cometary particles and interstellar dust for a sample
+                return to Earth in 2006. The photographs taken during this close
+                flyby of a comet nucleus show jets of dust and a rugged,
+                textured surface. Analysis of the Stardust samples suggests that
+                comets may be more complex than originally thought. Minerals
+                formed near the Sun or other stars were found in the samples,
+                suggesting that materials from the inner regions of the solar
+                system traveled to the outer regions where comets formed.
+              </p>
+              <p>
+                Another NASA mission, Deep Impact, consisted of a flyby
+                spacecraft and an impactor. In July 2005, the impactor was
+                released into the path of the nucleus of comet Tempel 1 in a
+                planned collision, which vaporized the impactor and ejected
+                massive amounts of fine, powdery material from beneath the
+                comet's surface. En route to impact, the impactor camera imaged
+                the comet in increasing detail. Two cameras and a spectrometer
+                on the flyby spacecraft recorded the dramatic excavation that
+                helped determine the interior composition and structure of the
+                nucleus.
+              </p>
+              <p>
+                After their successful primary missions, the Deep Impact
+                spacecraft and the Stardust spacecraft were still healthy and
+                were retargeted for additional cometary flybys. Deep Impact's
+                mission, EPOXI (Extrasolar Planet Observation and Deep Impact
+                Extended Investigation), comprised two projects: the Deep Impact
+                Extended Investigation (DIXI), which encountered comet Hartley 2
+                in November 2010, and the Extrasolar Planet Observation and
+                Characterization (EPOCh) investigation, which searched for
+                Earth-size planets around other stars on route to Hartley 2.
+                NASA returned to comet Tempel 1 in 2011, when the Stardust New
+                Exploration of Tempel 1 (NExT) mission observed changes in the
+                nucleus since Deep Impact's 2005 encounter.
+              </p>
+              <h3 id="How-Comets-Get">How Comets Get Their Names</h3>
+              <p>
+                Comet naming can be complicated. Comets are generally named for
+                their discoverer—either a person or a spacecraft. This
+                International Astronomical Union guideline was developed only in
+                the last century. For example, comet Shoemaker-Levy 9 was so
+                named because it was the ninth short-periodic comet discovered
+                by Eugene and Carolyn Shoemaker and David Levy. Since spacecraft
+                are very effective at spotting comets many comets have LINEAR,
+                SOHO or WISE in their names.
+              </p>
+              <div class="page_updated">
+                <hr />
+                Page Updated: March 17, 2021
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End indepth -->
+
+        <!-- Start gallery -->
+        <div class="tab_wrap" style="display: none">
+          <div class="tab_content">
+            <div class="content-gallery">
+              <!-- Gallery -->
+              <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">
+                Gallery
+              </h1>
+
+              <hr class="mt-2 mb-5" />
+
+              <div class="row text-center text-lg-left">
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/aob0ukAYfuI/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/EUfxH-pze7s/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/M185_qYH8vg/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/sesveuG_rNo/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/AvhMzHwiE_0/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/2gYsZUmockw/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/EMSDtjVHdQ8/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/8mUEy0ABdNE/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/G9Rfc1qccH4/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/aJeH0KcFkuc/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                  <a href="#" class="d-block mb-4 h-100">
+                    <img
+                      class="img-fluid img-thumbnail"
+                      src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+              <!-- Gallery -->
+            </div>
+          </div>
+        </div>
+        <!-- End gallery -->
+      </div>
+    </div>
+    <script>
+      var tabs = document.querySelectorAll(".tabs ul li");
+      var tab_wraps = document.querySelectorAll(".tab_wrap");
+
+      tabs.forEach(function (tab, tab_index) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (tab) {
+            tab.classList.remove("active-tab");
+          });
+          tab.classList.add("active-tab");
+
+          tab_wraps.forEach(function (content, content_index) {
+            if (content_index == tab_index) {
+              content.style.display = "block";
+            } else {
+              content.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- related-news -->
+    <div class="related-news related-news-comets">
+      <h1>RELATED NEWS</h1>
+      <div class="related-carousel">
+        <div
+          id="carousel-related-news"
+          class="carousel slide"
+          data-ride="carousel"
+        >
+          <div class="carousel-inner container">
+            <div class="carousel-item active">
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1731_Oort_Cloud_Illustration-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        A one-time visitor to our inner solar system is helping
+                        explain more about our own origins.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    Comet Catalina Suggests Comets Delivered Carbon to Rocky
+                    Planets
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1722_hubble-trojan-comet-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        A wayward young comet-like object orbiting among the
+                        giant planets has found a temporary parking place along
+                        the way.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    Comet Makes a Pit Stop Near Jupiter's Asteroids
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/10022_D2004_0630_D401_320.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        JPL's lucky peanuts are an unofficial tradition at big
+                        mission events.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">What Are NASA's Lucky Peanuts?</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1628_eclipsecometsoho2-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        As Chile and Argentina witnessed the total solar eclipse
+                        on Dec. 14, 2020, a little tiny speck was flying past
+                        the Sun – a recently discovered comet.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    Recently Discovered Comet Seen During 2020 Total Solar
+                    Eclipse
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1561_sungrazing_comet_parker-640x480.gif"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        When scientists downlinked data from Parker Solar
+                        Probe's sixth orbit, there was a surprise waiting for
+                        them: a sungrazing comet.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">Two Views of a Sungrazing Comet</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1520_Blue_Moon_Airplane_320.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        The next full Moon will be on Thursday afternoon, Oct.
+                        1, 2020. The Moon will appear full from Wednesday
+                        morning through Saturday morning.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    October 2020: The Next Full Moon is the Harvest Moon
+                  </p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1507_Comet_-67P_Churyumov-Gerasimenko-640x480.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        NASA instruments aboard ESA's Rosetta mission helped
+                        reveal that comet 67P/Churyumov-Gerasimenko has its own
+                        aurora.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    Comet Discovered to Have Its Own Northern Lights
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1462_stsci-h-v2045a_neowise_grey-320x240.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        This is the first time Hubble has photographed a comet
+                        of this brightness at such resolution after this close
+                        of a pass by the Sun.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    Hubble Snaps Close-Up of Celebrity Comet NEOWISE
+                  </p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#1">
+                  <div class="box">
+                    <img
+                      class="img-fluid"
+                      src="https://solarsystem.nasa.gov/system/news_items/list_view_images/1421_2020-NK1_320.jpg"
+                      alt=""
+                    />
+                    <div class="box-content">
+                      <p>
+                        The Earth has one less asteroid to worry about thanks to
+                        the research of an international team of scientists at
+                        the Arecibo Observatory in Puerto Rico.
+                      </p>
+                    </div>
+                  </div>
+
+                  <p class="text-center">
+                    Arecibo Observatory Returns from Tropical Storm Isaias
+                    Lockdown to Track Asteroid for NASA
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#carousel-related-news"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#carousel-related-news"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <h2 class="destinations-title">More Destinations</h2>
+      <div class="destinations-carousel">
+        <div id="carousel-2" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner container">
+            <div class="carousel-item active">
+              <div class="col-4">
+                <a href="#Jupiter">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/16_jupiter_new.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Jupiter</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Earth">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/17_earth.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Earth</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Mercury">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/18_mercury_new.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Mercury</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#Venus">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/27_venus_jg.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Venus</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Saturn">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/28_saturn.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Saturn</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Uranus">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/29_uranus.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Uranus</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#Neptune">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/30_neptune.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Neptune</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Earth's Moon">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/31_earth_moon.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Earth's Moon</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel-2" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-2" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="nb-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="about">
+                <h1 class="stay-connected">Stay Connected</h1>
+
+                <div class="social-media">
+                  <ul class="list-inline">
+                    <li>
+                      <a href="#facebook" title=""
+                        ><i class="fab fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#twitter" title=""
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#google" title=""
+                        ><i class="fab fa-google-plus-g"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#linkedin" title=""
+                        ><i class="fab fa-linkedin-in"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">SOLAR SYSTEM</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Our Solar
+                      System</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Sun</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Kuiper Belt</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Oort Cloud</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Beyond Our Solar
+                      System</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Planets</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mercury</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Venus</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Earth</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mars</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Jupiter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Saturn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Uranus</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Neptune</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title">DWARF PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Pluto</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Ceres</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Makemake</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Haumea</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Eris</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title">HYPOTHETICAL</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Planet X</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">MOONS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Moons</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">BY DESTINATION</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Earth (1)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mars (2)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Jupiter (79)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Saturn (82)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Uranus (27)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Neptune (14)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Pluto (5)</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">ASTEROIDS, COMETS & METEORS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Asteroids,
+                      Comets & Meteors</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">BY TYPE</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Meteors &
+                      Meteorites</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Asteroids</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Comets</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">MORE</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> News</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> What's Up:
+                      Skywatching Tips from NASA</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Resources</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Raw Images</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> People</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Missions</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Science Goals</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Technology
+                      Reports</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Kids</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Interactives</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Basics of Space
+                      Flight</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Solar System
+                      Ambassadors</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Resource
+                      Packages</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>Copyright © 2021. Astronomy Company.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>
