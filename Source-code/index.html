@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HomePage</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jquery-nav -->
+    <script>
+      //Active menu
+      $(document).ready(function () {
+        $("ul li a").click(function () {
+          $("li a").removeClass("active-menu");
+          $(this).addClass("active-menu");
+        });
+      });
+
+      //hide show menu
+      var prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("menu").style.top = "0";
+        } else {
+          document.getElementById("menu").style.top = "-100px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav id="menu">
+        <input type="checkbox" id="show-menu" />
+        <label for="show-menu" class="menu-icon"
+          ><i class="fas fa-bars"></i
+        ></label>
+        <div class="content">
+          <div class="logo"><a href="index.html">Astronomy</a></div>
+          <ul class="links">
+            <li><a class="active-menu" href="index.html">Homepage</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li>
+              <a href="#" class="desktop-link"
+                >Planets <i class="fa fa-caret-down"></i
+              ></a>
+              <input type="checkbox" id="show-features" />
+              <label for="show-features"
+                >Planets <i class="fa fa-caret-down"></i
+              ></label>
+              <ul>
+                <li><a href="planets/detail-mars.html">Mars</a></li>
+                <li><a href="planets/detail-venus.html">Venus</a></li>
+                
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="desktop-link"
+                >Stars <i class="fa fa-caret-down"></i
+              ></a>
+              <input type="checkbox" id="show-services" />
+              <label for="show-services"
+                >Stars <i class="fa fa-caret-down"></i
+              ></label>
+              <ul>
+                <li><a href="stars/detail-comet.html">Comet</a></li>
+
+                <li>
+                  <a href="#" class="desktop-link"
+                    >More Items <i class="fa fa-caret-down"></i
+                  ></a>
+                  <input type="checkbox" id="show-items" />
+                  <label for="show-items"
+                    >More Items <i class="fa fa-caret-down"></i
+                  ></label>
+                  <ul>
+                    <li><a href="#">Sub Menu 1</a></li>
+                    <li><a href="#">Sub Menu 2</a></li>
+                    <li><a href="#">Sub Menu 3</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="blog.html">Blogs</a></li>
+            <li><a href="maps.html">Maps</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="planet-carousel">
+      <div id="carousel-1" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+          <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-1" data-slide-to="1"></li>
+          <li data-target="#carousel-1" data-slide-to="2"></li>
+          <li data-target="#carousel-1" data-slide-to="3"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video class="img-fluid" autoplay loop muted>
+              <source
+                src="assets/video/home/Mercury-720x420.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video class="img-fluid" autoplay loop muted>
+              <source
+                src="assets/video/home/Venus-720x420.m4v"
+                type="video/mp4"
+              />
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video class="img-fluid" autoplay loop muted>
+              <source
+                src="assets/video/home/Earth-720x420.m4v"
+                type="video/mp4"
+              />
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <video class="img-fluid" autoplay loop muted>
+              <source
+                src="assets/video/home/Mars-720x420.m4v"
+                type="video/mp4"
+              />
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carousel-1" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel-1" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="more-bar more-bar-overview">
+      <a href="#ten-thing-home"> MORE <i class="fas fa-angle-down"></i> </a>
+    </div>
+    <div id="ten-thing-home" class="ten-thing-home">
+      <div class="row container">
+        <div class="col-12 title-ten-thing-home">
+          <div style="display: flex; justify-content: center">
+            <p style="font-weight: 600; color: cornflowerblue; font-size: 16px">
+              10 THINGS
+            </p>
+
+            <span style="font-weight: 600; padding-left: 5px"> May 6 </span>
+          </div>
+          <h1>The Roundup</h1>
+          <p>The latest from around your galactic neighborhood.</p>
+        </div>
+
+        <div class="card-ten-thing col-lg-4 col-sm-6">
+          <div class="img">
+            <img
+              class="img-fluid"
+              src="assets/img/ten-thing-home/569_Ingenuity_Flight_Four_Cropped.gif"
+              alt=""
+            />
+          </div>
+          <div class="decription">
+            <h1>1</h1>
+            <p>Perseverance Captures Video, Audio of Fourth Ingenuity Flight</p>
+          </div>
+        </div>
+        <div class="card-ten-thing col-lg-4 col-sm-6">
+          <div class="img">
+            <img
+              class="img-fluid"
+              src="assets/img/ten-thing-home/638_SWOT_illustration-800x600.jpg"
+              alt=""
+            />
+          </div>
+          <div class="decription">
+            <h1>2</h1>
+            <p>Cutting-Edge SWOT Satellite to Survey the World's Water</p>
+          </div>
+        </div>
+        <div class="card-ten-thing col-lg-4 col-sm-6">
+          <div class="img">
+            <img
+              class="img-fluid"
+              src="assets/img/ten-thing-home/615_OSIRIS-REx-MOM-800x600.jpg"
+              alt=""
+            />
+          </div>
+          <div class="decription">
+            <h1>3</h1>
+            <p>OSIRIS-REx 'MOM' Says Bittersweet Goodbye to Asteroid Bennu</p>
+          </div>
+        </div>
+        <div class="card-ten-thing col-lg-4 col-sm-6">
+          <div class="img">
+            <img
+              class="img-fluid"
+              src="assets/img/ten-thing-home/565_potw2117a_Hubble_Necklace_Nebula-800x600.jpg"
+              alt=""
+            />
+          </div>
+          <div class="decription">
+            <h1>4</h1>
+            <p>A Dazzling Cosmic Necklace</p>
+          </div>
+        </div>
+        <div class="card-ten-thing col-lg-4 col-sm-6">
+          <div class="img">
+            <img
+              class="img-fluid"
+              src="assets/img/ten-thing-home/566_atmospheric_rivers-800x600.gif"
+              alt=""
+            />
+          </div>
+          <div class="decription">
+            <h1>5</h1>
+            <p>In a First, Scientists Map Particle-Laden Rivers in the Sky</p>
+          </div>
+        </div>
+        <div class="card-ten-thing col-lg-4 col-sm-6">
+          <div class="img">
+            <img
+              class="img-fluid"
+              src="assets/img/ten-thing-home/563_Lunar_Crater_Radio_Telescope-800x600.jpg"
+              alt=""
+            />
+          </div>
+          <div class="decription">
+            <h1>6</h1>
+            <p>
+              Lunar Crater Radio Telescope: Illuminating the Cosmic Dark Ages
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-home">
+      <div class="feature-content container">
+        <h6>FEATURED</h6>
+        <h2>First Aerial Color Image of Mars</h2>
+        <p>
+          Ingenuity captured the first color image of the Martian surface taken
+          by an aerial vehicle.
+        </p>
+        <a class="btn btn-primary" href="#" role="button">Read More</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h2 class="destinations-title">More Destinations</h2>
+      <div class="destinations-carousel">
+        <div id="carousel-2" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner container">
+            <div class="carousel-item active">
+              <div class="col-4">
+                <a href="#Jupiter">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/16_jupiter_new.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Jupiter</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Earth">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/17_earth.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Earth</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Mercury">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/18_mercury_new.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Mercury</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#Venus">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/27_venus_jg.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Venus</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Saturn">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/28_saturn.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Saturn</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Uranus">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/29_uranus.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Uranus</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="col-4">
+                <a href="#Neptune">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/30_neptune.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Neptune</p>
+                </a>
+              </div>
+              <div class="col-4">
+                <a href="#Earth's Moon">
+                  <img
+                    class="img-fluid"
+                    src="https://solarsystem.nasa.gov/system/feature_items/images/31_earth_moon.png"
+                    alt=""
+                  />
+                  <p class="text-center text-white">Earth's Moon</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carousel-2" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#carousel-2" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="nb-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="about">
+                <h1 class="stay-connected">Stay Connected</h1>
+
+                <div class="social-media">
+                  <ul class="list-inline">
+                    <li>
+                      <a href="#facebook" title=""
+                        ><i class="fab fa-facebook-f"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#twitter" title=""
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#google" title=""
+                        ><i class="fab fa-google-plus-g"></i
+                      ></a>
+                    </li>
+                    <li>
+                      <a href="#linkedin" title=""
+                        ><i class="fab fa-linkedin-in"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">SOLAR SYSTEM</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Our Solar
+                      System</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Sun</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Kuiper Belt</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Oort Cloud</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Beyond Our Solar
+                      System</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Planets</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mercury</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Venus</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Earth</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mars</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Jupiter</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Saturn</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Uranus</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Neptune</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title">DWARF PLANETS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Pluto</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Ceres</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Makemake</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Haumea</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Eris</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title">HYPOTHETICAL</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Planet X</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">MOONS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Moons</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">BY DESTINATION</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Earth (1)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Mars (2)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Jupiter (79)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Saturn (82)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Uranus (27)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Neptune (14)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Pluto (5)</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">ASTEROIDS, COMETS & METEORS</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> About Asteroids,
+                      Comets & Meteors</a
+                    >
+                  </li>
+                </ul>
+                <h2 class="title" style="opacity: 0.8">BY TYPE</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Meteors &
+                      Meteorites</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Asteroids</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Comets</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md">
+              <div class="footer-info-single">
+                <h2 class="title">MORE</h2>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> News</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> What's Up:
+                      Skywatching Tips from NASA</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Resources</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Raw Images</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> People</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Missions</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Science Goals</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Technology
+                      Reports</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Kids</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Interactives</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Basics of Space
+                      Flight</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Solar System
+                      Ambassadors</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#footer" title=""
+                      ><i class="fa fa-angle-double-right"></i> Resource
+                      Packages</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <p>Copyright © 2021. Astronomy Company.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </footer>
+    </div>
+  </body>
+</html>
